@@ -1,0 +1,76 @@
+<div class="container">
+
+
+  <h1>Administrare Turnee</h1>
+
+
+  <div class="container mb-4">
+      <form #f = "ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Formatie</label>
+          <input [(ngModel)] = "selectedTurneu.formatie"  name="formatie" type="text" class="form-control" id="formatie" aria-describedby="formatieHealp">
+          <small id="formatieHealp" class="form-text text-muted">Formatie completat corect</small>
+        </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Tara</label>
+            <input [(ngModel)] = "selectedTurneu.tara"  name="tara" type="text" class="form-control" id="tara" aria-describedby="taraHealp">
+            <small id="taraHealp" class="form-text text-muted">Tara completat corect</small>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Oras</label>
+              <input [(ngModel)] = "selectedTurneu.oras" name="oras" type="text" class="form-control" id="oras" aria-describedby="orasHealp">
+              <small id="orasHealp" class="form-text text-muted">Oras completat corect</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Locatie</label>
+              <input [(ngModel)] = "selectedTurneu.locatie"  name="locatie" type="text" class="form-control" id="locatie" aria-describedby="locatieHealp">
+              <small id="locatieHealp" class="form-text text-muted">Locatie completat corect</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">DataConcert</label>
+              <input [(ngModel)] = "selectedTurneu.dataconcert" name="dataconcert" type="date" class="form-control" id="dataconcert" aria-describedby="dataconcertHealp">
+              <small id="dataconcertHealp" class="form-text text-muted">Format:01/01/2022</small>
+            </div>
+            <div class="form-group">
+              <label for="formFile" class="form-label">Incarca Foto </label>
+              <input [(ngModel)] = "selectedTurneu.img" name="img" type="file" class="form-control" id="img" aria-describedby="imgHealp">
+              <small id="imgHealp" class="form-text text-muted"> Imagine incarcata corect</small>
+            </div>
+            <input [(ngModel)] = "selectedTurneu.id" name="id" type="hidden" class="form-control" id="id" >
+
+          <button (click)="createOrUpdateTurneu(f)" type="submit" class="btn btn-primary">Create or Update Turneu</button>
+        </form>
+
+  </div>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Formatie</th>
+          <th scope="col">Tara</th>
+          <th scope="col">Oras</th>
+          <th scope="col">Locatie</th>
+          <th scope="col">Data Concert</th>
+          <th scope="col">Img</th>
+          <th scope="col">Data Adaugare</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let turneu of turnee" [attr.id]="turneu.id">
+              <td>{{ turneu.id }}</td>
+              <td>{{ turneu.formatie }}</td>
+              <td>{{ turneu.tara }}</td>
+              <td>{{ turneu.oras }}</td>
+              <td>{{ turneu.locatie }}</td>
+              <td>{{ turneu.dataconcert }}</td>
+              <td>{{ turneu.img }}</td>
+              <td>{{ turneu.dataadaugare }}</td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="deleteTurneu(turneu.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="selectTurneu(turneu)">Update</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
