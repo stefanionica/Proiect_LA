@@ -69,7 +69,7 @@ export const findOne = (turneuId: number, callback: Function) => {
         locatie: row.locatie,
         dataconcert: row.dataconcert,
         img: row.img,
-      //dataadaugare: row.dataadaugare,
+        dataadaugare: row.dataadaugare,
     };
     callback(null, turneu);
   });

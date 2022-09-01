@@ -15,6 +15,7 @@ import { TurneuComponent } from './turneu/turneu.component';
 import { TurneuapiService } from './turneuapi.service';
 import { ProdusapiService } from './produsapi.service';
 import { BiletapiService } from './biletapi.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BiletapiService } from './biletapi.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [
     ApiService,

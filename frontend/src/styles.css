@@ -347,3 +347,7 @@ html, body {
   color: yellow;
 }
 
+img.band {
+  width: 150px;
+  height: 100px;
+}

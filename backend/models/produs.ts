@@ -63,7 +63,7 @@ export const findOne = (produsId: number, callback: Function) => {
         pret: row.pret,
         cantitate: row.cantitate,
         img: row.img,
-      //dataadaugare: row.dataadaugare,
+        dataadaugare: row.dataadaugare,
     };
     callback(null, produs);
   });

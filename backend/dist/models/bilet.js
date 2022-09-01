@@ -68,7 +68,7 @@ const findOne = (biletId, callback) => {
             oras: row.oras,
             locatie: row.locatie,
             dataconcert: row.dataconcert,
-            //dataadaugare: row.dataadaugare,
+            dataadaugare: row.dataadaugare,
         };
         callback(null, bilet);
     });

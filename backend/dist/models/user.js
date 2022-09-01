@@ -74,7 +74,7 @@ const findOne = (userId, callback) => {
             img: row.img,
             datanastere: row.datanastere,
             telefon: row.telefon,
-            //dataadaugare: row.dataadaugare,
+            dataadaugare: row.dataadaugare,
         };
         callback(null, user);
     });

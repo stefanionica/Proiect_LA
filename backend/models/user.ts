@@ -72,7 +72,7 @@ export const findOne = (userId: number, callback: Function) => {
       img: row.img,
       datanastere: row.datanastere,
       telefon: row.telefon,
-      //dataadaugare: row.dataadaugare,
+      dataadaugare: row.dataadaugare,
     };
     callback(null, user);
   });

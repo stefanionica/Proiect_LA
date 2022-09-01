@@ -65,7 +65,7 @@ const findOne = (produsId, callback) => {
             pret: row.pret,
             cantitate: row.cantitate,
             img: row.img,
-            //dataadaugare: row.dataadaugare,
+            dataadaugare: row.dataadaugare,
         };
         callback(null, produs);
     });
