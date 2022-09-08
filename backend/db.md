@@ -85,7 +85,7 @@ CREATE TABLE `turnee` (
   `locatie` varchar(50) NOT NULL,
   `dataconcert` date NOT NULL,
   `img` varchar(50) NOT NULL,
-  `dataadaugare` date NOT NULL DEFAULT current_timestamp()
+  `dataadaugare` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

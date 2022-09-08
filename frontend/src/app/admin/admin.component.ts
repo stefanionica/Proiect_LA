@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { User } from './../models/user';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
@@ -10,7 +11,9 @@ import { ApiService } from '../api.service';
 export class AdminComponent implements OnInit {
   users: any[]=[];
   selectedUser: User = { id: 0, nume: '', prenume: '',email:'',cnp:'', img:'',datanastere:new Date() ,telefon:''};
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, http: HttpClient) {}
+
+  
 
   ngOnInit(): void {
     this.readUsers();

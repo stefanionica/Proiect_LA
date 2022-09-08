@@ -3,7 +3,7 @@
 
   <h1>Produse Turneu</h1>
   <div class="shop-items">
-    
+
     <div class="shop-item">
       <span class="shop-item-title">Album ABBA</span>
       <img src="../../assets/img/ABBA.jpg" class="band" alt="">
@@ -60,7 +60,17 @@
               <label for="exampleInputEmail1">Incarca foto</label>
               <input [(ngModel)] = "selectedProdus.img"  name="img" type="file" class="form-control" id="img" aria-describedby="imgHealp">
               <small id="imgHealp" class="form-text text-muted">Imagine incarcata corect</small>
+
             </div>
+
+
+            <!-- <div class="form-group">
+              <label for="exampleInputEmail1">Incarca foto</label>
+              <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+              <small id="imgHealp" class="form-text text-muted">Imagine incarcata corect</small>
+            </div> -->
+
+
 
 
             <input [(ngModel)] = "selectedProdus.id" name="id" type="hidden" class="form-control" id="id" >

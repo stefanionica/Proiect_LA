@@ -48,6 +48,11 @@ deleteProdus(id:number) {
 
   });
 }
+// afuConfig = {
+//   uploadAPI: {
+//     url:"http://localhost:3002/"
+//   }
+// };
 
 }
 
