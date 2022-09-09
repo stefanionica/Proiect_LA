@@ -16,6 +16,7 @@ import { TurneuapiService } from './turneuapi.service';
 import { ProdusapiService } from './produsapi.service';
 import { BiletapiService } from './biletapi.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AngularFileUploaderModule
   ],
   providers: [
     ApiService,
