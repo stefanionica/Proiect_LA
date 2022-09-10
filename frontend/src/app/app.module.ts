@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiService } from './api.service';
 import { AdminComponent } from './admin/admin.component';
 import { BiletComponent } from './bilet/bilet.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,6 +16,7 @@ import { ProdusapiService } from './produsapi.service';
 import { BiletapiService } from './biletapi.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
