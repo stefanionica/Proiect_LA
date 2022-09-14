@@ -1,0 +1,110 @@
+<div class="container">
+
+
+  <h1>Produse Turneu</h1>
+  <div class="shop-items">
+
+    <div class="shop-item">
+      <span class="shop-item-title">Album ABBA</span>
+      <img src="../../assets/img/ABBA.jpg" class="band" alt="">
+      <div class="inner">
+        <a href="https://youtu.be/za8YwKC2aIg" class="btn btn-primary">Watch</a>
+      </div>
+    </div>
+
+    <div class="shop-item">
+      <span class="shop-item-title">Album Smokie</span>
+      <img class="band" src="../../assets/img/Smoky band.jpg" alt="">
+      <div>
+        <a href="https://youtu.be/0S-t45AGIpc" class="btn btn-primary">Watch</a>
+      </div>
+    </div>
+
+
+
+    <div class="shop-item">
+      <span class="shop-item-title">Album The Beatles</span>
+      <img class="band" src="../../assets/img/The Beatles.png" alt="">
+      <div>
+        <a href="https://youtu.be/NCtzkaL2t_Y" class="btn btn-primary">Watch</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <span class="shop-item-title">Album AC/DC</span>
+      <img class="band" src="../../assets/img/acdc.png" alt="">
+      <div>
+        <a href="https://youtu.be/v2AC41dglnM" class="btn btn-primary">Watch</a>
+      </div>
+    </div>
+
+</div>
+
+  <div class="container mb-4">
+      <form #f = "ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Suvenir</label>
+          <input [(ngModel)] = "selectedProdus.suvenir"  name="suvenir" type="text" class="form-control" id="suvenir" aria-describedby="suvenirHealp">
+          <small id="suvenirHealp" class="form-text text-muted">Produs completat corect</small>
+        </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Pret</label>
+            <input [(ngModel)] = "selectedProdus.pret"  name="pret" type="text" class="form-control" id="pret" aria-describedby="pretHealp">
+            <small id="pretHealp" class="form-text text-muted">Pret produs completat corect</small>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Cantitate</label>
+              <input [(ngModel)] = "selectedProdus.cantitate" name="cantitate" type="text" class="form-control" id="cantitate" aria-describedby="cantitateHealp">
+              <small id="cantitateHealp" class="form-text text-muted">Cantitate completat corect</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Incarca foto</label>
+              <input [(ngModel)] = "selectedProdus.img"  name="img" type="file" class="form-control" id="img" aria-describedby="imgHealp">
+              <small id="imgHealp" class="form-text text-muted">Imagine incarcata corect</small>
+
+            </div>
+
+
+            <!-- <div class="form-group">
+              <label for="exampleInputEmail1">Incarca foto</label>
+              <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+              <small id="imgHealp" class="form-text text-muted">Imagine incarcata corect</small>
+            </div> -->
+
+
+
+
+            <input [(ngModel)] = "selectedProdus.id" name="id" type="hidden" class="form-control" id="id" >
+
+          <button (click)="createOrUpdateProdus(f)" type="submit" class="btn btn-primary">Create or Update Produse</button>
+        </form>
+
+  </div>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Suvenir</th>
+          <th scope="col">Pret</th>
+          <th scope="col">Cantitate</th>
+          <th scope="col">Imagine</th>
+          <th scope="col">Data Adaugare</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let produs of produse" [attr.id]="produs.id">
+              <td>{{ produs.id }}</td>
+              <td>{{ produs.suvenir }}</td>
+              <td>{{ produs.pret }}</td>
+              <td>{{ produs.cantitate }}</td>
+              <td>{{ produs.img}}</td>
+              <td>{{ produs.dataadaugare }}</td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="deleteProdus(produs.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="selectProdus(produs)">Update</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+

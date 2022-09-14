@@ -1,0 +1,50 @@
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AdminComponent } from './admin/admin.component';
+import { BiletComponent } from './bilet/bilet.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProdusComponent } from './produs/produs.component';
+import { TurneuComponent } from './turneu/turneu.component';
+import { TurneuapiService } from './turneuapi.service';
+import { ProdusapiService } from './produsapi.service';
+import { BiletapiService } from './biletapi.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ApiService } from './api.service';
+import { LoginComponent } from './login/login.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AdminComponent,
+    BiletComponent,
+    FooterComponent,
+    HomeComponent,
+    NavbarComponent,
+    ProdusComponent,
+    TurneuComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+    AngularFileUploaderModule
+  ],
+  providers: [
+    ApiService,
+    TurneuapiService,
+    BiletapiService,
+    ProdusapiService,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

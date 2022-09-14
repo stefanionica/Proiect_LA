@@ -1,0 +1,70 @@
+<div class="container">
+
+
+  <h1>Bilete Turneu</h1>
+
+
+  <div class="container mb-4">
+      <form #f = "ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tip de bilet</label>
+          <input [(ngModel)] = "selectedBilet.tipdebilet"  name="tipdebilet" type="text" class="form-control" id="tipdebilet" aria-describedby="tipdebiletHealp">
+          <small id="tipdebiletHealp" class="form-text text-muted">Tip de bilet completat corect</small>
+        </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Numar bilete</label>
+            <input [(ngModel)] = "selectedBilet.numarbilete"  name="numarbilete" type="text" class="form-control" id="numarbilete" aria-describedby="numarbileteHealp">
+            <small id="numarbileteHealp" class="form-text text-muted">Numar bilete completat corect</small>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Oras</label>
+              <input [(ngModel)] = "selectedBilet.oras" name="oras" type="text" class="form-control" id="oras" aria-describedby="orasHealp">
+              <small id="orasHealp" class="form-text text-muted">Oras completat corect</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Locatie</label>
+              <input [(ngModel)] = "selectedBilet.locatie"  name="locatie" type="text" class="form-control" id="locatie" aria-describedby="locatieHealp">
+              <small id="locatieHealp" class="form-text text-muted">Locatie completat corect</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">DataConcert</label>
+              <input [(ngModel)] = "selectedBilet.dataconcert" name="dataconcert" type="date" class="form-control" id="dataconcert" aria-describedby="dataconcertHealp">
+              <small id="dataconcertHealp" class="form-text text-muted">Format:01/01/2022</small>
+            </div>
+
+            <input [(ngModel)] = "selectedBilet.id" name="id" type="hidden" class="form-control" id="id" >
+
+          <button (click)="createOrUpdateBilet(f)" type="submit" class="btn btn-primary">Create or Update Bilete</button>
+        </form>
+
+  </div>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tip de bilet</th>
+          <th scope="col">Numar bilete</th>
+          <th scope="col">Oras</th>
+          <th scope="col">Locatie</th>
+          <th scope="col">Data Concert</th>
+          <th scope="col">Data Adaugare</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let bilet of bilete" [attr.id]="bilet.id">
+              <td>{{ bilet.id }}</td>
+              <td>{{ bilet.tipdebilet }}</td>
+              <td>{{ bilet.numarbilete }}</td>
+              <td>{{ bilet.oras }}</td>
+              <td>{{ bilet.locatie }}</td>
+              <td>{{ bilet.dataconcert }}</td>
+              <td>{{ bilet.dataadaugare }}</td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="deleteBilet(bilet.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="selectBilet(bilet)">Update</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
